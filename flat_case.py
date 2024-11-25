@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 #from selenium.webdriver.chrome.service import Service
 import time
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # Импортируем модуль CSV
