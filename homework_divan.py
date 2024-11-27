@@ -6,10 +6,12 @@ df = pd.DataFrame(data)
 print(df.head())
 #print(df.describe())
 #print(df.info())
+
 # Удаляем пробелы и преобразуем в int
-#df['price'] = df['price'].fillna(0, inplace=True)
+
 df['price'] = df['price'].str.replace(' ', '').astype(int)
 #print(df.info()) проверка преобразования типа
+
 mean_price = df['price'].mean()
 print(f'Средняя стоимость - {mean_price}')
 
