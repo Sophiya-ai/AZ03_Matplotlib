@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-data = pd.read_csv('hwDivansCost/hwDivansCost/costs.csv')
+data = pd.read_csv('hwDivansCost/cost.csv')
 df = pd.DataFrame(data)
 print(df.head())
 #print(df.describe())

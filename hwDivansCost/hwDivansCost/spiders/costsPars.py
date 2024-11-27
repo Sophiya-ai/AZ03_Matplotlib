@@ -18,12 +18,13 @@ class CostsparsSpider(scrapy.Spider):
             # останавливать и возобновлять работу парсера (С другими операторами мы такого делать не можем)
             # Ссылки и теги получаем с помощью консоли на сайте
             price = divan.css('div.fxA6s span::text').get()
+            exist = divan.css('link[itemprop="availability"]::attr(href)').get()
 
             yield {
                 # Создаём словарик названий, используем поиск по диву, а внутри дива — по тегу span
                 'name' : divan.css('div.lsooF span::text').get(),
                 # Создаём словарик цен, используем поиск по диву, а внутри дива — по тегу span
-                'price' : price if price else '0'
+                'price' : price if exist else '0'
                 #'exist' : divan.css('div.MYKz_::text').get()
             }
 
