@@ -8,7 +8,7 @@ class CostsparsSpider(scrapy.Spider):
 
     def parse(self, response):
         # Создаём переменную, в которую будет сохраняться информация
-        # response.css(’div._Ud0k’) — поиск по тегу. Будет создан целый список
+        # response.css(’div.lsooF’) — поиск по тегу. Будет создан целый список
         divans = response.css('div.lsooF')
 
         # Настраиваем работу с каждым отдельным диваном в списке
@@ -21,8 +21,8 @@ class CostsparsSpider(scrapy.Spider):
                 # Создаём словарик названий, используем поиск по диву, а внутри дива — по тегу span
                 'name' : divan.css('div.lsooF span::text').get(),
                 # Создаём словарик цен, используем поиск по диву, а внутри дива — по тегу span
-                'price' : divan.css('div.pY3d2 span::text').get(),
-                'exist' : divan.css('div.MYKz_::text').get()
+                'price' : divan.css('div.q5Uds span::text').get(),
+                #'exist' : divan.css('div.MYKz_::text').get()
             }
 
             # Создали новый запрос для перехода на следующую страницу
