@@ -21,7 +21,7 @@ class CostsparsSpider(scrapy.Spider):
                 # Создаём словарик названий, используем поиск по диву, а внутри дива — по тегу span
                 'name' : divan.css('div.lsooF span::text').get(),
                 # Создаём словарик цен, используем поиск по диву, а внутри дива — по тегу span
-                'price' : divan.css('div.q5Uds span::text').get(),
+                'price' : divan.css('div.fxA6s span::text').get(),
                 #'exist' : divan.css('div.MYKz_::text').get()
             }
 
